@@ -208,9 +208,41 @@
      - `public String toString()`
 
    **Answer**:
-   ```
-   x = 1
-   x = 2
+   ```java
+   public class Student {
+       private int studentId;
+       private String name;
+   
+       public Student(int studentId, String name) {
+           this.studentId = studentId;
+           this.name = name;
+       }
+   
+       public Student() {
+           this(1234567, "John Doe");
+       }
+   
+       public int getStudentId() {
+           return studentId;
+       }
+   
+       public void setStudentId(int studentId) {
+           this.studentId = studentId;
+       }
+   
+       public String getName() {
+           return name;
+       }
+   
+       public void setName(String name) {
+           this.name = name;
+       }
+   
+       public String toString() {
+           return "studentId=" + studentId +
+                   ", name='" + name;
+       }
+   }
    ```
 
    **Correction**:
@@ -222,11 +254,20 @@
     - Assign a `Student` object to the element in position 1 using the second constructor. 
     - Use the mutator method to change the name of any element. 
     - Use the toString method to display the information for each object.
+
+    **Answer**:
+    ```java
+    public class Test{
+        public static void main(String[] args){
+            Student[] pupils = new Student[2];
+            pupils[0] = new Student(91911, "Jane Smith");
+            pupils[1] = new Student();
+            pupils[0].setName("Jane Doe");
+            pupils[0].toString();
+            pupils[1].toString();
+        }
+    }
+    ```
+
+    **Correction**:
    
-   ```java
-   public class Test {
-      public static void main(String[] args) {
-        //Write code here.
-      }
-   }    
-   ```
